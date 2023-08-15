@@ -11,7 +11,8 @@
     "lint-fix": "eslint --fix \"src/**/*.{js,ts}\"",
     "lint": "eslint \"src/**/*.{js,ts}\"",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "commit": "git add . && git cz"
   },
   "dependencies": {
     "cross-env": "^7.0.3",
