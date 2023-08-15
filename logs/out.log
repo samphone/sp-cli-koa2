@@ -1,0 +1,38 @@
+2023-08-14 11:10:48 +08:00: prd_dev
+2023-08-14 11:10:59 +08:00: error
+2023-08-14 11:11:18 +08:00: prd_dev
+2023-08-14 11:11:28 +08:00: error
+2023-08-14 11:38:12 +08:00: prd_dev
+2023-08-14 11:38:22 +08:00: error
+2023-08-14 11:39:30 +08:00: prd_dev
+2023-08-14 11:39:40 +08:00: error
+2023-08-14 11:48:42 +08:00: prd_dev
+2023-08-14 11:48:42 +08:00: Executing (default): SELECT 1+1 AS result
+2023-08-14 11:48:42 +08:00: Executing (default): SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME = 'users' AND TABLE_SCHEMA = 'sp_cli'
+2023-08-14 11:48:42 +08:00: ok
+2023-08-14 11:48:42 +08:00: Executing (default): SHOW FULL COLUMNS FROM `users`;
+2023-08-14 11:48:42 +08:00: Executing (default): SELECT CONSTRAINT_NAME as constraint_name,CONSTRAINT_NAME as constraintName,CONSTRAINT_SCHEMA as constraintSchema,CONSTRAINT_SCHEMA as constraintCatalog,TABLE_NAME as tableName,TABLE_SCHEMA as tableSchema,TABLE_SCHEMA as tableCatalog,COLUMN_NAME as columnName,REFERENCED_TABLE_SCHEMA as referencedTableSchema,REFERENCED_TABLE_SCHEMA as referencedTableCatalog,REFERENCED_TABLE_NAME as referencedTableName,REFERENCED_COLUMN_NAME as referencedColumnName FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE where TABLE_NAME = 'users' AND CONSTRAINT_NAME!='PRIMARY' AND CONSTRAINT_SCHEMA='sp_cli' AND REFERENCED_TABLE_NAME IS NOT NULL;
+2023-08-14 11:48:42 +08:00: Executing (default): ALTER TABLE `users` CHANGE `userName` `userName` VARCHAR(255) NOT NULL COMMENT '用户名，唯一';
+2023-08-14 11:48:42 +08:00: Executing (default): ALTER TABLE `users` CHANGE `password` `password` VARCHAR(255) NOT NULL COMMENT '密码';
+2023-08-14 11:48:42 +08:00: Executing (default): ALTER TABLE `users` CHANGE `phoneNumber` `phoneNumber` VARCHAR(255) NOT NULL COMMENT '手机号，唯一';
+2023-08-14 11:48:42 +08:00: Executing (default): ALTER TABLE `users` CHANGE `nickName` `nickName` VARCHAR(255) COMMENT '昵称';
+2023-08-14 11:48:42 +08:00: Executing (default): ALTER TABLE `users` CHANGE `gender` `gender` INTEGER NOT NULL DEFAULT 0 COMMENT '性别（1 男性，2 女性，0 保密）';
+2023-08-14 11:48:42 +08:00: Executing (default): ALTER TABLE `users` CHANGE `picture` `picture` VARCHAR(255) COMMENT '头像，图片地址';
+2023-08-14 11:48:42 +08:00: Executing (default): ALTER TABLE `users` CHANGE `city` `city` VARCHAR(255) COMMENT '城市';
+2023-08-14 11:48:42 +08:00: Executing (default): ALTER TABLE `users` CHANGE `latestLoginAt` `latestLoginAt` DATETIME DEFAULT NULL COMMENT '最后登录时间';
+2023-08-14 11:48:42 +08:00: Executing (default): ALTER TABLE `users` CHANGE `isFrozen` `isFrozen` TINYINT(1) DEFAULT false COMMENT '用户是否冻结';
+2023-08-14 11:48:42 +08:00: Executing (default): ALTER TABLE `users` CHANGE `createdAt` `createdAt` DATETIME NOT NULL;
+2023-08-14 11:48:42 +08:00: Executing (default): ALTER TABLE `users` CHANGE `updatedAt` `updatedAt` DATETIME NOT NULL;
+2023-08-14 11:48:42 +08:00: Executing (default): SHOW INDEX FROM `users`
+2023-08-14 11:48:45 +08:00:   <-- GET /api/users/
+2023-08-14 11:48:45 +08:00: GET /api/users/ - 3ms
+2023-08-14 11:48:45 +08:00:   --> GET /api/users/ 200 12ms 25b
+2023-08-14 11:48:45 +08:00:   <-- GET /favicon.ico
+2023-08-14 11:48:45 +08:00: GET /favicon.ico - 1ms
+2023-08-14 11:48:45 +08:00:   --> GET /favicon.ico 404 4ms -
+2023-08-14 14:21:30 +08:00:   <-- GET /favicon.ico
+2023-08-14 14:21:30 +08:00: GET /favicon.ico - 1ms
+2023-08-14 14:21:30 +08:00:   --> GET /favicon.ico 404 17ms -
+2023-08-14 16:29:28 +08:00:   <-- GET /api/users/
+2023-08-14 16:29:28 +08:00: GET /api/users/ - 3ms
+2023-08-14 16:29:28 +08:00:   --> GET /api/users/ 200 31ms 25b
