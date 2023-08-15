@@ -38,6 +38,9 @@
     "simple-git": "^3.19.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "cz-git": "^1.7.1",
     "eslint": "^8.47.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.0.0",
@@ -50,8 +53,12 @@
   },
   "lint-staged": {
     "*.{js,ts,vue.jsx,tsx}": [
-      "npm run lint",
-      "git add"
+      "npm run lint"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   }
 }
